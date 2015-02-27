@@ -45,6 +45,8 @@ filetype plugin indent on    " required
 "
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'bling/vim-airline'
 set ai
 set sw=2
 set ts=2
@@ -54,6 +56,14 @@ set incsearch
 set nu
 set ruler
 set showcmd
+
+"Make vim look nice
 colo wombat256mod
 hi Normal       ctermfg=252     ctermbg=232     cterm=none      guifg=#e3e0d7   guibg=#242424   gui=none
 hi LineNr       ctermfg=241     ctermbg=234     cterm=none      guifg=#857b6f   guibg=#080808   gui=none
+
+"Add the file explorer with reasonable behavior
+" Auto open nerd tree on startup
+let g:nerdtree_tabs_open_on_console_startup = 1
+" Focus in the main content window
+let g:nerdtree_tabs_focus_on_files = 1
