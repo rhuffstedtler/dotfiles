@@ -1,0 +1,9 @@
+# Improve key bindings
+unbind C-b
+
+#start window numbers at 1 to match keyboard order
+set-window-option -g pane-base-index 1
+
+#Make status bar more aesthetically pleasing
+set -g status-bg '#666666'
+set -g status-fg '#aaaaaa'
