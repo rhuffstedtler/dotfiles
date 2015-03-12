@@ -6,6 +6,10 @@ set -g prefix C-s
 set -g base-index 1
 set-window-option -g pane-base-index 1
 
+#rebind pane splitting
+bind | split-window -h
+bind - split-window -v
+
 #Make status bar more aesthetically pleasing
 set -g status-bg '#666666'
 set -g status-fg '#aaaaaa'

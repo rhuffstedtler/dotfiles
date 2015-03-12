@@ -1,0 +1,5 @@
+CLICOLOR=1
+LSCOLORS=GxFxCxDxBxegedabagaced
+PS1="\[$(tput bold)\]\[$(tput setab 2)\]\u@\h:\w $ "
+
+[[ -s ${HOME}/.profile ]] && source ${HOME}/.profile
