@@ -3,4 +3,5 @@ tmux new-session -d 'vim /var/www/drupal/index.php'
 tmux split-window -v 
 tmux split-window -h
 tmux select-pane 1
+tmux resize-pane -D 18
 tmux -2 attach-session -d
