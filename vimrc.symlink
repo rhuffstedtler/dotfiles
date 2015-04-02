@@ -62,6 +62,7 @@ set showcmd
 colo wombat256mod
 hi Normal       ctermfg=252     ctermbg=232     cterm=none      guifg=#e3e0d7   guibg=#242424   gui=none
 hi LineNr       ctermfg=241     ctermbg=234     cterm=none      guifg=#857b6f   guibg=#080808   gui=none
+hi MatchParen   cterm=none ctermbg=black ctermfg=magenta
 
 "Add the file explorer with reasonable behavior
 " Auto open nerd tree on startup
