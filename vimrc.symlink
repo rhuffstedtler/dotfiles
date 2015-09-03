@@ -57,6 +57,7 @@ set incsearch
 set nu
 set ruler
 set showcmd
+set whichwrap+=<,>,[,]
 
 "Make vim look nice
 colo wombat256mod
