@@ -1,5 +1,36 @@
 CLICOLOR=1
 LSCOLORS=GxFxCxDxBxegedabagaced
-PS1="\[$(tput bold)\]\[$(tput setab 2)\]\u@\h:\w $ "
+PS1="\[$(tput bold)\]\[$(tput setab 2)\]\e[0m\u@\h:\w $ "
 
 [[ -s ${HOME}/.profile ]] && source ${HOME}/.profile
+
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\n\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+export PATH="$PATH:/Applications/DevDesktop/tools"
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+#I started trying to get bash-git-prompt to work, but it needs some
+#tweaking - see https://github.com/magicmonty/bash-git-prompt
+#if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+#  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+#  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+#fi
+
+
+function blt() {
+  if [ "`git rev-parse --show-cdup 2> /dev/null`" != "" ]; then
+    GIT_ROOT=$(git rev-parse --show-cdup)
+  else
+    GIT_ROOT="."
+  fi
+
+  if [ -f "$GIT_ROOT/vendor/bin/blt" ]; then
+    $GIT_ROOT/vendor/bin/blt "$@"
+  else
+    echo "You must run this command from within a BLT-generated project repository."
+    return 1
+  fi
+}
